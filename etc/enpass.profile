@@ -53,10 +53,10 @@ seccomp
 shell none
 tracelog
 
-private-bin dirname,Enpass,importer_enpass,sh,readlink
+private-bin dirname,Enpass,importer_enpass,readlink,sh
 ?HAS_APPIMAGE: ignore private-dev
 private-dev
 private-opt Enpass
 private-tmp
 
-#memory-deny-write-execute - breaks on Arch
+#memory-deny-write-execute - breaks on Arch (see issue #1803)

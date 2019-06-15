@@ -7,6 +7,7 @@ include cheese.local
 include globals.local
 
 noblacklist ${VIDEOS}
+noblacklist ${PICTURES}
 
 include disable-common.inc
 include disable-devel.inc
@@ -17,6 +18,7 @@ include disable-programs.inc
 include disable-xdg.inc
 
 whitelist ${VIDEOS}
+whitelist ${PICTURES}
 include whitelist-common.inc
 include whitelist-var-common.inc
 
@@ -39,5 +41,5 @@ tracelog
 disable-mnt
 private-bin cheese
 private-cache
-private-etc alternatives,fonts,drirc,clutter-1.0,gtk-3.0,dconf
+private-etc alternatives,clutter-1.0,dconf,drirc,fonts,gtk-3.0
 private-tmp

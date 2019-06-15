@@ -35,9 +35,10 @@ shell none
 
 # disable-mnt
 private-bin aria2c,gzip
-private-cache
+# Uncomment the next line (or put 'private-cache' in your aria2c.local) if you don't use Lutris/winetricks (see issue #2772)
+#private-cache
 private-dev
-private-etc alternatives,ca-certificates,ssl,resolv.conf
+private-etc alternatives,ca-certificates,resolv.conf,ssl
 private-lib libreadline.so.*
 private-tmp
 

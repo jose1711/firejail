@@ -41,11 +41,11 @@ disable-mnt
 private-bin bash,geekbenc*,sh
 private-cache
 private-dev
-private-etc alternatives,group,passwd,lsb-release
+private-etc alternatives,group,lsb-release,passwd
 private-lib libstdc++.so.*
 private-opt none
 private-tmp
 
-# memory-deny-write-execute - Breaks on Arch
+#memory-deny-write-execute - breaks on Arch (see issue #1803)
 
 read-only ${HOME}

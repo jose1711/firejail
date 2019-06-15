@@ -6,24 +6,10 @@ include seahorse.local
 # Persistent global definitions
 include globals.local
 
-# dconf
 noblacklist ${HOME}/.config/dconf
-whitelist ${HOME}/.config/dconf
-
-# gpg
-mkdir ${HOME}/.gnupg
 noblacklist ${HOME}/.gnupg
-whitelist ${HOME}/.gnupg
-
-# ssh
-whitelist /etc/ld.so.preload
-noblacklist /etc/ssh
-whitelist /etc/ssh
-noblacklist /tmp/ssh-*
-whitelist /tmp/ssh-*
-mkdir ${HOME}/.ssh
 noblacklist ${HOME}/.ssh
-whitelist ${HOME}/.ssh
+noblacklist /tmp/ssh-*
 
 include disable-common.inc
 include disable-devel.inc
@@ -33,6 +19,13 @@ include disable-passwdmgr.inc
 include disable-programs.inc
 include disable-xdg.inc
 
+mkdir ${HOME}/.config/dconf
+mkdir ${HOME}/.gnupg
+mkdir ${HOME}/.ssh
+whitelist ${HOME}/.config/dconf
+whitelist ${HOME}/.gnupg
+whitelist ${HOME}/.ssh
+whitelist /tmp/ssh-*
 include whitelist-common.inc
 include whitelist-var-common.inc
 
@@ -57,5 +50,6 @@ tracelog
 disable-mnt
 private-cache
 private-dev
+private-etc ca-certificates,crypto-policies,dconf,fonts,gconf,gtk-2.0,gtk-3.0,hostname,host.conf,hosts,ld.so.preload,nsswitch.conf,pango,pki,protocols,resolv.conf,rpc,services,ssh,ssl,X11
 
 writable-run-user

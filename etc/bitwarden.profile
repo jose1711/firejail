@@ -47,8 +47,8 @@ private-bin bitwarden
 private-cache
 ?HAS_APPIMAGE: ignore private-dev
 private-dev
-private-etc alternatives,ca-certificates,crypto-policies,hosts,nsswitch.conf,fonts,pki,resolv.conf,ssl
+private-etc alternatives,ca-certificates,crypto-policies,fonts,hosts,nsswitch.conf,pki,resolv.conf,ssl
 private-opt Bitwarden
 private-tmp
 
-#memory-deny-write-execute - breaks on Arch
+#memory-deny-write-execute - breaks on Arch (see issue #1803)

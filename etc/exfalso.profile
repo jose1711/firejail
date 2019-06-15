@@ -13,6 +13,9 @@ noblacklist ${MUSIC}
 include allow-python2.inc
 include allow-python3.inc
 
+whitelist ${DOWNLOADS}
+whitelist ${MUSIC}
+
 include disable-common.inc
 include disable-devel.inc
 include disable-exec.inc
@@ -20,6 +23,11 @@ include disable-interpreters.inc
 include disable-passwdmgr.inc
 include disable-programs.inc
 include disable-xdg.inc
+
+mkdir ${HOME}/.quodlibet
+whitelist ${HOME}/.quodlibet
+include whitelist-common.inc
+include whitelist-var-common.inc
 
 caps.drop all
 machine-id
@@ -45,4 +53,4 @@ private-etc alternatives,fonts,group,passwd
 private-lib libatk-1.0.so.*,libgdk-3.so.*,libgdk_pixbuf-2.0.so.*,libgirepository-1.0.so.*,libgstreamer-1.0.so.*,libgtk-3.so.*,libgtksourceview-3.0.so.*,libpango-1.0.so.*,libpython*,libreadline.so.*,libsoup-2.4.so.*,libssl.so.1.*,python2*,python3*
 private-tmp
 
-# memory-deny-write-execute - Breaks on Arch
+#memory-deny-write-execute - breaks on Arch (see issue #1803)
